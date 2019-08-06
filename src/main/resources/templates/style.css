@@ -1,0 +1,53 @@
+body {
+  background: black;
+  color: white;
+}
+
+#PageBody {
+  display: flex;
+  flex-direction: column;
+  background: green;
+}
+
+#BodyContent {
+  display: flex;
+  flex-direction: row;
+  background: red;
+}
+
+#ContentLeft {
+  display: flex;
+  flex-direction: column;
+  background: fuchsia;
+  width: 15vw;
+}
+
+#ContentRight {
+  display: flex;
+  flex-direction: column;
+  background: teal;
+  width: 85vw;
+}
+
+#Menu {
+  background: yellow;
+  height: 50%;
+}
+
+#Latest {
+  background: blueviolet;
+  height: 50%;
+}
+
+#SearchContent {
+  display: flex;
+  flex-direction: column;
+}
+
+#Search {
+  background: darkgoldenrod;
+}
+
+#SearchButtons {
+  background: brown;
+}
