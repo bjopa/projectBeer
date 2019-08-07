@@ -6,6 +6,6 @@
 </head>
 <body>
 <p th:text="'Welcome SkumMaster ' + ${session.user.username}"></p>
-<p th:each="beer : ${session.beers}" th:text="${beer.name}"></p>
+<p th:each="beer : ${session.sumbeers}" th:text="${beer.key.name} + ' ' + ${beer.value}"></p>
 </body>
 </html>

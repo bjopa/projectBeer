@@ -2,20 +2,18 @@ package com.example.beerApp;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpSession;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 @Controller
 public class UserController {
 
     @Autowired
-    UserRepository userRepository;
+    private UserRepository userRepository;
 
     @GetMapping("/login")
     public String login() {
@@ -34,11 +32,23 @@ public class UserController {
 
     @GetMapping("/welcome")
     public String welcome(HttpSession session) {
-        User user = (User)session.getAttribute("user");
-        List<Beer> beers = new ArrayList<>();
-        beers = userRepository.getBeerByUser(user);
-        if (beers!= null) {
-            session.setAttribute("beers", beers);
+        User user = (User) session.getAttribute("user");
+        List<Beer> allBeers;
+        allBeers = userRepository.getBeerByUser(user);
+        Map<Beer, Integer> sumBeers = new HashMap<>();
+        if (allBeers != null) {
+            for (int i = 0; i < allBeers.size() - 1; i++) {
+                int count = 1;
+                for (int j = i + 1; j < allBeers.size(); j++) {
+                    if (allBeers.get(i).getId() == allBeers.get(j).getId()) {
+                        count++;
+                    }
+                }
+                if (!sumBeers.containsKey(allBeers.get(i))) {
+                    sumBeers.put(allBeers.get(i), count);
+                }
+            }
+            session.setAttribute("sumbeers", sumBeers);
         }
         return "welcome";
     }
