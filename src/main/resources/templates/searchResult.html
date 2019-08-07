@@ -6,11 +6,14 @@
 </head>
 <body>
 
-<ul id="bookInfo" th:each="Beer : ${Beers}">
+<div th:if="${!beerList.empty}">
+<ul id="beerInfo" th:each="Beer : ${beerList}">
 
-    <li th:text="${Beer.id}"></li>
     <li th:text="${Beer.name}"></li>
     <li th:text="${Beer.brewery}"></li>
+    <li th:text="${Beer.style}"></li>
+    <li th:text="${Beer.alcohol} + ' %' "></li>
+    <li th:text="${Beer.description}"></li>
 
 </ul>
 
@@ -27,6 +30,11 @@
     <a th:if="${currentPage != numberOfPages}" th:href="'/' + ${currentPage+1}">Next page</a>
 
 </div>
+</div>
+
+<p th:if="${beerList.empty}">
+    Something went wrong, please try again!
+</p>
 
 </body>
 </html>

@@ -46,7 +46,11 @@ public class BeerRepository {
     private Beer rsBeer(ResultSet rs) throws SQLException {
         return new Beer(rs.getInt("ID"),
                 rs.getString("Name"),
-                rs.getString("brewery"));
+                rs.getString("Brewery"),
+                rs.getString("Style"),
+                rs.getDouble("Alcohol"),
+                rs.getString("Description"));
+
     }
 
     public List<Beer> getPage(int page, int pageSize, List<Beer> beerList) {
@@ -57,7 +61,7 @@ public class BeerRepository {
     }
 
     public int numberOfPages() {
-        return (int)Math.ceil(new Double(beerList.size()) / 1);
+        return (int)Math.ceil(new Double(beerList.size()) / 5);
     }
 
 }
