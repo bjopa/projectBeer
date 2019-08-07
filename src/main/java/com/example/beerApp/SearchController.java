@@ -24,7 +24,7 @@ public class SearchController {
         return "search";
     }
 
-    @PostMapping("/{page}")
+    @PostMapping("/result/{page}")
     public String searchResult(@RequestParam String search, @PathVariable int page, Model model, HttpSession session) throws SQLException {
 
         session.setAttribute("search", search);
@@ -43,7 +43,7 @@ public class SearchController {
         return"searchResult";
     }
 
-    @GetMapping("/{page}")
+    @GetMapping("/result/{page}")
     public String searchResult2(@PathVariable int page, Model model, HttpSession session) throws SQLException {
 
         String search = (String)session.getAttribute("search");
@@ -55,7 +55,7 @@ public class SearchController {
 
         int numberOfPages = repository.numberOfPages();
 
-        model.addAttribute("Beers", beerList);
+        model.addAttribute("beerList", beerList);
         model.addAttribute("numberOfPages", numberOfPages);
         model.addAttribute("currentPage", page);
 

@@ -3,8 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Search Result</title>
+    <link rel="stylesheet" type="text/css" href="/styleIM.css">
 </head>
 <body>
+
+<form action="/1" method="POST">
+    <input type="text" name="search"/>
+    <input type="submit" value="SEARCH"/>
+</form>
 
 <div th:if="${!beerList.empty}">
 <ul id="beerInfo" th:each="Beer : ${beerList}">
@@ -24,7 +30,7 @@
 
     <span th:each="page : ${#numbers.sequence(1, numberOfPages)}">
       <a th:if="${page != currentPage}"  th:href="'/' + ${page}"><span th:text="${page} "></span></a>
-      <span id ="currentPage" th:if="${page == currentPage}"  th:text="${page}"></span>
+      <span id ="currentPage" th:if="${page == currentPage} and ${numberOfPages != 1}"  th:text="${page}"></span>
 </span>
 
     <a th:if="${currentPage != numberOfPages}" th:href="'/' + ${currentPage+1}">Next page</a>
