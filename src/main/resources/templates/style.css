@@ -6,7 +6,6 @@ body {
 #PageBody {
   display: flex;
   flex-direction: column;
-  background: green;
 }
 
 #BodyContent {
@@ -15,39 +14,30 @@ body {
   background: red;
 }
 
-#ContentLeft {
-  display: flex;
-  flex-direction: column;
-  background: fuchsia;
-  width: 15vw;
+#BodyFooter {
+  position: fixed;
+  bottom: 0;
+  background: lightgreen;
+  color: black;
+  width: 100vw;
+  text-align: center;
+  padding: 7px;
 }
 
-#ContentRight {
-  display: flex;
-  flex-direction: column;
-  background: teal;
-  width: 85vw;
+#ContentLeft {
+  display: inline-block;
+  background: fuchsia;
+  width: 15%;
+  height: 50em;
 }
 
 #Menu {
   background: yellow;
+  color: black;
   height: 50%;
 }
 
 #Latest {
   background: blueviolet;
   height: 50%;
-}
-
-#SearchContent {
-  display: flex;
-  flex-direction: column;
-}
-
-#Search {
-  background: darkgoldenrod;
-}
-
-#SearchButtons {
-  background: brown;
 }
