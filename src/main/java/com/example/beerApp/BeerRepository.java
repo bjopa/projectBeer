@@ -9,37 +9,38 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BeerRepository {
-
+    private List<Beer> beerList;
 
     public List<Beer> getBeer(String search) throws SQLException {
 
         String connstr = "jdbc:sqlserver://localhost;databaseName=SkumMasters;user=skumadmin;password=123;";
 
-        String sql = "SELECT * FROM BEER WHERE BREWERY LIKE ? OR NAME LIKE ?";
+        String sql = "SELECT * FROM BEER WHERE BREWERY LIKE ? OR NAME LIKE ? OR STYLE LIKE ?";
 
-        List<Beer> resultList = new ArrayList<>();
+        beerList = new ArrayList<>();
 
         try (Connection conn = DriverManager.getConnection(connstr);
              PreparedStatement ps = conn.prepareStatement(sql)) {
 
-            ps.setString(1, search);
-            ps.setString(2, search);
+            ps.setString(1, "%" + search + "%");
+            ps.setString(2, "%" + search + "%");
+            ps.setString(3, "%" + search + "%");
 
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {
-                resultList.add(rsBeer(rs));
+                beerList.add(rsBeer(rs));
             }
 
-            for (int i = 0; i < resultList.size(); i++) {
-                System.out.println(resultList.get(i).getBrewery());
+            for (int i = 0; i < beerList.size(); i++) {
+                System.out.println(beerList.get(i).getBrewery());
             }
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
-        return resultList;
+        return beerList;
     }
 
     private Beer rsBeer(ResultSet rs) throws SQLException {
@@ -47,4 +48,16 @@ public class BeerRepository {
                 rs.getString("Name"),
                 rs.getString("brewery"));
     }
+
+    public List<Beer> getPage(int page, int pageSize, List<Beer> beerList) {
+        int from = Math.max(0,page*pageSize);
+        int to = Math.min(beerList.size(),(page+1)*pageSize);
+
+        return beerList.subList(from, to);
+    }
+
+    public int numberOfPages() {
+        return (int)Math.ceil(new Double(beerList.size()) / 1);
+    }
+
 }

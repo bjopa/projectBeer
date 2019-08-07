@@ -6,13 +6,27 @@
 </head>
 <body>
 
-<ul id="bookInfo" th:each="beer : ${Result}">
+<ul id="bookInfo" th:each="Beer : ${Beers}">
 
-    <li th:text="${beer.id}"></li>
-    <li th:text="${beer.name}"></li>
-    <li th:text="${beer.brewery}"></li>
+    <li th:text="${Beer.id}"></li>
+    <li th:text="${Beer.name}"></li>
+    <li th:text="${Beer.brewery}"></li>
 
 </ul>
+
+<div id="navBar">
+
+    <a th:if="${currentPage != 1}" th:href="'/' +${currentPage-1}">Previous page</a>
+
+
+    <span th:each="page : ${#numbers.sequence(1, numberOfPages)}">
+      <a th:if="${page != currentPage}"  th:href="'/' + ${page}"><span th:text="${page} "></span></a>
+      <span id ="currentPage" th:if="${page == currentPage}"  th:text="${page}"></span>
+</span>
+
+    <a th:if="${currentPage != numberOfPages}" th:href="'/' + ${currentPage+1}">Next page</a>
+
+</div>
 
 </body>
 </html>
