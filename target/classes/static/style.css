@@ -68,6 +68,7 @@ body {
 .feedgrabbr_widget {
   padding: 50px;
 }
+/*
 
 #beerInfo {
     display: flex;
@@ -82,3 +83,51 @@ body {
     font-size: 120%;
     font-weight: bold;
 }
+*/
+
+
+/*START. Code by Irvin, search result*/
+#beerinfo {
+background-color: white;
+padding-left: 20px;
+}
+
+.beerpic {
+margin-top: 20px;
+float: left;
+}
+
+.beername{
+    font-weight: bold;
+    margin: auto;
+    padding-left: 0;
+    padding-top: 10px;
+    padding-right: 10px;
+
+}
+
+.brewery {
+     padding: 0;
+     padding-top: 10px;
+}
+
+.beerstyle {
+       padding-right: 10px;
+       margin: auto;
+       float: left;
+}
+
+.alcohol {
+    color: black;
+    font-size: small;
+    padding: 0;
+    margin: 0;
+}
+
+.description {
+        padding-bottom: 10px;
+        padding-left: 10px;
+}
+
+
+/*END. Code by Irvin, search result*/

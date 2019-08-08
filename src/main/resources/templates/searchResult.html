@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Search Result</title>
-    <link rel="stylesheet" type="text/css" href="/normalize.css" />
     <link rel="stylesheet" type="text/css" href="/style.css" />
+    <link rel="stylesheet" type="text/css" href="/normalize.css" />
 </head>
 <body id="PageBody">
 <div id="BodyContent">
@@ -18,21 +18,16 @@
     </div>
     <div id="ContentRight">
 
-        <form action="/result/1" method="POST">
-            <input type="text" name="search"/>
-            <input type="submit" value="SEARCH"/>
-        </form>
 
         <div th:if="${!beerList.empty}">
-            <div id="beerInfo" th:each="Beer : ${beerList}">
+            <div id="beerinfo" th:each="Beer : ${beerList}">
 
-                <img src="/beer_icon.png" width="20%"/>
-                <h2 th:text="${Beer.name}" class="beerListRow1"></h2>
-                <p th:text="${Beer.brewery}" class="beerListRow1"></p>
-                <p th:text="${Beer.style}" class="beerListRow2"></p>
-                <p th:text="'(' + ${Beer.alcohol} + ' %)' " class="beerListRow2"></p>
-                <p th:text="${Beer.description}" class="beerListRow3"></p>
-
+                <img src="/beer_icon.png" class="beerpic" width="15%"/>
+                <p th:text="${Beer.name}" class="beername"></p>
+                <p th:text="${Beer.brewery}" class="brewery"></p>
+                <p th:text="${Beer.style}" class="beerstyle"></p>
+                <p th:text="' ' + '(' + ${Beer.alcohol} + ' %)' " class="alcohol"></p>
+                <p th:text="${Beer.description}" class="description"></p>
             </div>
 
             <div id="navBar">
