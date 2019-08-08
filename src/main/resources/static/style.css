@@ -6,6 +6,8 @@ body {
 
 #LoginBody {
   background: #588fb3;
+  text-align: center;
+  padding-top: 50px;
 }
 
 #PageBody {
@@ -75,7 +77,7 @@ body {
 
 #beerInfo {
   display: flex;
-  direction-flex: row;
+  flex-direction: row;
 }
 
 #beerInfo li {
