@@ -4,6 +4,10 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+#LoginBody {
+  background: #588fb3;
+}
+
 #PageBody {
   display: flex;
   flex-direction: column;
@@ -48,9 +52,9 @@ body {
 
 #Latest {
   height: calc(100% - 400px);
-  /* border-width: 2px 0 0 0;
+  border-width: 2px 0 0 0;
   border-color: #16adcc;
-  border-style: solid; */
+  border-style: solid;
   width: 270px;
   text-align: center;
 }
@@ -70,15 +74,15 @@ body {
 }
 
 #beerInfo {
-    display: flex;
-    direction-flex: row;
+  display: flex;
+  direction-flex: row;
 }
 
 #beerInfo li {
-    list-style: none;
+  list-style: none;
 }
 
 #beerInfo li:nth-child(2) {
-    font-size: 120%;
-    font-weight: bold;
+  font-size: 120%;
+  font-weight: bold;
 }
