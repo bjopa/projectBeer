@@ -3,29 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <title>Search Result</title>
+    <link rel="stylesheet" type="text/css" href="/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="/style.css" />
 </head>
-<body>
+<body id="PageBody">
+<div id="BodyContent">
+    <div id="ContentLeft">
+        <div id="Menu">
+            <img src="/anon.png" width="30%" />
+        </div>
+        <div id="Latest">
+            <img src="/beermug_small.png" width="80%" />
+        </div>
+    </div>
+    <div id="ContentRight">
 
-<ul id="bookInfo" th:each="Beer : ${Beers}">
+        <form action="/result/1" method="POST">
+            <input type="text" name="search"/>
+            <input type="submit" value="SEARCH"/>
+        </form>
 
-    <li th:text="${Beer.id}"></li>
-    <li th:text="${Beer.name}"></li>
-    <li th:text="${Beer.brewery}"></li>
+        <div th:if="${!beerList.empty}">
+            <div id="beerInfo" th:each="Beer : ${beerList}">
 
-</ul>
+                <img src="/beer_icon.png" width="20%"/>
+                <h2 th:text="${Beer.name}" class="beerListRow1"></h2>
+                <p th:text="${Beer.brewery}" class="beerListRow1"></p>
+                <p th:text="${Beer.style}" class="beerListRow2"></p>
+                <p th:text="'(' + ${Beer.alcohol} + ' %)' " class="beerListRow2"></p>
+                <p th:text="${Beer.description}" class="beerListRow3"></p>
 
-<div id="navBar">
+            </div>
 
-    <a th:if="${currentPage != 1}" th:href="'/' +${currentPage-1}">Previous page</a>
+            <div id="navBar">
+
+                <a th:if="${currentPage != 1}" th:href="'/result/' +${currentPage-1}">Previous page</a>
 
 
-    <span th:each="page : ${#numbers.sequence(1, numberOfPages)}">
-      <a th:if="${page != currentPage}"  th:href="'/' + ${page}"><span th:text="${page} "></span></a>
-      <span id ="currentPage" th:if="${page == currentPage}"  th:text="${page}"></span>
+                <span th:each="page : ${#numbers.sequence(1, numberOfPages)}">
+      <a th:if="${page != currentPage}"  th:href="'/result/' + ${page}"><span th:text="${page} "></span></a>
+      <span id ="currentPage" th:if="${page == currentPage} and ${numberOfPages != 1}"  th:text="${page}"></span>
 </span>
 
-    <a th:if="${currentPage != numberOfPages}" th:href="'/' + ${currentPage+1}">Next page</a>
+                <a th:if="${currentPage != numberOfPages}" th:href="'/result/' + ${currentPage+1}">Next page</a>
 
+            </div>
+        </div>
+
+        <p th:if="${beerList.empty}">
+            Something went wrong, please try again!
+        </p>
+
+
+    </div>
+</div>
+
+<div id="BodyFooter">
+    Copyright SkumMasters of the Universe 2019
 </div>
 
 </body>
