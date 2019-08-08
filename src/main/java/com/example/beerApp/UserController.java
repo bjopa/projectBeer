@@ -25,12 +25,12 @@ public class UserController {
         User user = userRepository.checkUser(username, password);
         if (user != null) {
             session.setAttribute("user", user);
-            return "redirect:/welcome";
+            return "redirect:/profile";
         }
         return "login";
     }
 
-    @GetMapping("/welcome")
+    @GetMapping("/profile")
     public String welcome(HttpSession session) {
         User user = (User) session.getAttribute("user");
         List<Beer> allBeers;
@@ -50,6 +50,6 @@ public class UserController {
             }
             session.setAttribute("sumbeers", sumBeers);
         }
-        return "welcome";
+        return "profile";
     }
 }
