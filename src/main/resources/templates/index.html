@@ -13,9 +13,12 @@
       <div id="Menu">
         <div th:fragment="topleft">
           <img id="MenuImg" src="/anon.png" width="30%" />
+          <br>
           <span id="MenuSpan" th:text="${session.user.username}"></span>
           <br>
           <a href="/profile" class="button">My Profile</a>
+          <br>
+          <a href="/logout" class="button">Logout</a>
         </div>
       </div>
       <div id="Latest">

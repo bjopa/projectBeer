@@ -72,12 +72,18 @@ body {
 }
 
 #MenuSpan {
-    position: relative;
+    /*position: relative;
     top: -25px;
-    padding-left: 25px;
+    padding-left: 25px;*/
     font-size: 1.5em;
     font-style: italic;
     font-weight: bold;
+    margin-bottom: 25px;
+
+}
+
+#SmallSearch {
+    margin-top: 25px;
 }
 
 .feedgrabbr_widget {
@@ -100,7 +106,6 @@ body {
 
 .button {
 margin-top: 25px;
-margin-bottom: 25px;
 background: #16adcc;
 border: none;
 color: white;
@@ -110,4 +115,16 @@ text-decoration: none;
 display: inline-block;
 font-size: 16px;
 cursor: pointer;
+}
+
+.numberSquare {
+ width: 36px;
+ height: 36px;
+ padding: 8px;
+ background: #fff;
+ border: 2px solid #666;
+ color: #666;
+ text-align: center;
+ display: inline-block;
+ font: 32px Arial, sans-serif;
 }

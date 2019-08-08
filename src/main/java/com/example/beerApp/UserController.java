@@ -35,6 +35,12 @@ public class UserController {
         return "login";
     }
 
+    @GetMapping("/logout")
+    public String logout(HttpSession session) {
+        session.invalidate();
+        return "redirect:/login";
+    }
+
     @GetMapping("/profile")
     public String profile(HttpSession session) {
         User user = (User) session.getAttribute("user");
@@ -55,6 +61,8 @@ public class UserController {
                 }
             }
             session.setAttribute("sumbeers", sumBeers);
+            session.setAttribute("uniqueNum", sumBeers.size());
+            session.setAttribute("totalNum", allBeers.size());
         }
         return "profile";
     }

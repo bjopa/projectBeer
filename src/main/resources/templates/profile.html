@@ -11,9 +11,7 @@
     <div id="ContentLeft">
         <div id="Menu">
             <div th:replace="index :: topleft"/>
-            <form action="/result/1" method="post">
-                <input type="text" style="width: 150px;" name="search" placeholder="Search...">
-                <input type="submit" value="GO!">
+            <form th:replace="searchResult :: smallsearch">
             </form>
         </div>
         <div id="Latest">
@@ -21,7 +19,9 @@
         </div>
     </div>
     <div id="ContentRight">
-        <p th:each="beer : ${session.sumbeers}" th:text="${beer.key.name} + ' ' + ${beer.value}"></p>
+<!--        <p th:each="beer : ${session.sumbeers}" th:text="${beer.key.name} + ' ' + ${beer.value}"></p>-->
+        <span class="numberSquare" th:text="${session.totalNum}"></span>
+        <span class="numberSquare" th:text="${session.uniqueNum}"></span>
     </div>
 </div>
 
