@@ -41,7 +41,7 @@ public class UserController {
         List<Beer> allBeers;
         allBeers = userRepository.getBeerByUser(user);
         System.out.println(allBeers.size());
-        Map<Beer, Integer> sumBeers = new HashMap<>();
+        Map<Beer, Integer> sumBeers = new LinkedHashMap<>();
         if (allBeers != null) {
             for (int i = 0; i < allBeers.size() - 1; i++) {
                 int count = 1;
