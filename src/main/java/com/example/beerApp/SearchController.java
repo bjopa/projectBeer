@@ -18,11 +18,11 @@ import java.util.List;
 @Controller
 public class SearchController {
 
-    @GetMapping("/")
-    public String searchStart(){
-
-        return "search";
-    }
+//    @GetMapping("/")
+//    public String searchStart(){
+//
+//        return "search";
+//    }
 
     @PostMapping("/result/{page}")
     public String searchResult(@RequestParam String search, @PathVariable int page, Model model, HttpSession session) throws SQLException {

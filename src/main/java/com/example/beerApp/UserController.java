@@ -15,6 +15,11 @@ public class UserController {
     @Autowired
     private UserRepository userRepository;
 
+    @GetMapping("/")
+    public String startPage(HttpSession session) {
+        return "redirect:login";
+    }
+
     @GetMapping("/login")
     public String login() {
         return "login";
