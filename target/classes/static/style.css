@@ -16,6 +16,7 @@ body {
   overflow: hidden;
 }
 
+
 #BodyFooter {
   position: fixed;
   bottom: 0;
@@ -87,13 +88,14 @@ body {
 
 
 /*START. Code by Irvin, search result*/
-#beerinfo {
-background-color: white;
+.beerinfo {
 padding-left: 20px;
+font-color: #dce6ef;
 }
 
 .beerpic {
-margin-top: 20px;
+margin-top: 30px;
+margin-bottom: 20px;
 float: left;
 }
 
@@ -103,12 +105,14 @@ float: left;
     padding-left: 0;
     padding-top: 10px;
     padding-right: 10px;
+    float: left;
 
 }
 
 .brewery {
      padding: 0;
      padding-top: 10px;
+     margin-top: 0px;
 }
 
 .beerstyle {
@@ -126,7 +130,6 @@ float: left;
 
 .description {
         padding-bottom: 10px;
-        padding-left: 10px;
 }
 
 

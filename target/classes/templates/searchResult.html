@@ -20,9 +20,9 @@
 
 
         <div th:if="${!beerList.empty}">
-            <div id="beerinfo" th:each="Beer : ${beerList}">
+            <div class="beerinfo" th:each="Beer : ${beerList}">
 
-                <img src="/beer_icon.png" class="beerpic" width="15%"/>
+<!--                <img src="/beer_icon.png" class="beerpic" width="150" height="150"/>-->
                 <p th:text="${Beer.name}" class="beername"></p>
                 <p th:text="${Beer.brewery}" class="brewery"></p>
                 <p th:text="${Beer.style}" class="beerstyle"></p>
