@@ -14,6 +14,9 @@ public class UserRepository {
     @Autowired
     private DataSource dataSource;
 
+    @Autowired
+    BeerRepository beerRepository;
+
 
     private User rsUser(ResultSet rs) throws SQLException {
         // Helper method to create a User object instantiated with data from the ResultSet
@@ -41,8 +44,25 @@ public class UserRepository {
         return null;
     }
 
+    public void setBeerByUser(int beerId, int userId, int beerRating) {
+
+        try (Connection conn = dataSource.getConnection();
+             PreparedStatement ps = conn.prepareStatement("INSERT UserHistory(BeerID, UserID, Rating)\n" +
+                     "VALUES (?, ?, ?)")) {
+            ps.setInt(1, beerId);
+            ps.setInt(2, userId);
+            ps.setInt(3, beerRating);
+            ps.execute();
+
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+    }
+
     public List<Beer> getBeerByUser(User user) {
-        BeerRepository beerRepository = new BeerRepository();
+
         List<Beer> beers = new ArrayList<>();
         try (Connection conn = dataSource.getConnection();
              PreparedStatement ps = conn.prepareStatement("SELECT * FROM Beer " +

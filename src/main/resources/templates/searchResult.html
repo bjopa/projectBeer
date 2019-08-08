@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>Search Result</title>
     <link rel="stylesheet" type="text/css" href="/normalize.css" />
     <link rel="stylesheet" type="text/css" href="/style.css" />
+    <link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" />
+
 </head>
 <body id="PageBody">
 <div id="BodyContent">
@@ -23,10 +25,30 @@
     <div id="ContentRight">
 
         <div th:if="${!beerList.empty}">
-            <div id="beerInfo" th:each="Beer : ${beerList}">
+            <div class="beerInfo" th:each="Beer : ${beerList}">
+
+
+                <form th:action="@{'/result/' + ${page} + '/' + ${Beer.id}}" method="post" class="rating">
+
+                        <input type="submit" th:id="'star5id' + ${Beer.id}" name="beerRating" th:value="5" /><label class = "full" th:for="'star5id' + ${Beer.id}" title="Awesome - 5 stars"></label>
+
+                        <input type="submit" th:id="'star4id' + ${Beer.id}" name="beerRating" th:value="4" /><label class = "full" th:for="'star4id' + ${Beer.id}" title="Pretty good - 4 stars"></label>
+
+                        <input type="submit" th:id="'star3id' + ${Beer.id}" name="beerRating" th:value="3" /><label class = "full" th:for="'star3id' + ${Beer.id}" title="Meh - 3 stars"></label>
+
+                        <input type="submit" th:id="'star2id' + ${Beer.id}" name="beerRating" th:value="2" /><label class = "full" th:for="'star2id' + ${Beer.id}" title="Kinda bad - 2 stars"></label>
+
+                        <input type="submit" th:id="'star1id' + ${Beer.id}" name="beerRating" th:value="1" /><label class = "full" th:for="'star1id' + ${Beer.id}" title="Sucks big time - 1 star"></label>
+
+                </form>
+
+
+<!--                <form th:action="'/result/' + ${page} + '/' + ${Beer.id}" method="POST">-->
+<!--                    <button type="submit" value="Add to beerlist!" name="addToBeerList"/>Add to Beerlist!</button>-->
+<!--                </form>-->
 
                 <img src="/beer_icon.png" width="20%"/>
-                <h2 th:text="${Beer.name}" class="beerListRow1"></h2>
+                <h2 th:text="${Beer.name} + ' ' + ${Beer.brewery}"></h2>
                 <p th:text="${Beer.brewery}" class="beerListRow1"></p>
                 <p th:text="${Beer.style}" class="beerListRow2"></p>
                 <p th:text="'(' + ${Beer.alcohol} + ' %)' " class="beerListRow2"></p>

@@ -90,41 +90,43 @@ body {
   padding: 50px;
 }
 
-#beerInfo {
-  display: flex;
-  flex-direction: row;
+.rating > .half:before {
+  content: "\f089";
+  position: absolute;
 }
 
-#beerInfo li {
-  list-style: none;
+.rating > label {
+  color: #ddd;
+ float: right;
 }
 
-#beerInfo li:nth-child(2) {
-  font-size: 120%;
-  font-weight: bold;
+/***** CSS Magic to Highlight Stars on Hover *****/
+
+.rating > input:checked ~ label, /* show gold star when clicked */
+.rating:not(:checked) > label:hover, /* hover current star */
+.rating:not(:checked) > label:hover ~ label { color: #FFD700;  } /* hover previous stars in list */
+
+.rating > input:checked + label:hover, /* hover current star when changing rating */
+.rating > input:checked ~ label:hover,
+.rating > label:hover ~ input:checked ~ label, /* lighten current selection */
+.rating > input:checked ~ label:hover ~ label { color: #FFED85;  }
+
+.rating, label {
+margin: 0; padding: 0;
 }
 
-.button {
-margin-top: 25px;
-background: #16adcc;
-border: none;
-color: white;
-padding: 15px 32px;
-text-align: center;
-text-decoration: none;
-display: inline-block;
-font-size: 16px;
-cursor: pointer;
+/****** Style Star Rating Widget *****/
+
+.rating {
+  border: none;
+  float: left;
 }
 
-.numberSquare {
- width: 36px;
- height: 36px;
- padding: 8px;
- background: #fff;
- border: 2px solid #666;
- color: #666;
- text-align: center;
- display: inline-block;
- font: 32px Arial, sans-serif;
+.rating > input { display: none; }
+.rating > label:before {
+  margin: 5px;
+  font-size: 1.25em;
+  font-family: FontAwesome;
+  display: inline-block;
+  content: "\f005";
 }

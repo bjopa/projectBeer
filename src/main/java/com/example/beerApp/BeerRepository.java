@@ -2,25 +2,26 @@ package com.example.beerApp;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
+import org.springframework.stereotype.Service;
 
 import javax.sql.DataSource;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@Service
 public class BeerRepository {
     private List<Beer> beerList;
 
+    @Autowired
+    private DataSource dataSource;
+
     public List<Beer> getBeer(String search) throws SQLException {
-
-        String connstr = "jdbc:sqlserver://localhost;databaseName=SkumMasters;user=skumadmin;password=123;";
-
-        String sql = "SELECT * FROM BEER WHERE BREWERY LIKE ? OR NAME LIKE ? OR STYLE LIKE ?";
 
         beerList = new ArrayList<>();
 
-        try (Connection conn = DriverManager.getConnection(connstr);
-             PreparedStatement ps = conn.prepareStatement(sql)) {
+        try (Connection conn = dataSource.getConnection();
+             PreparedStatement ps = conn.prepareStatement("SELECT * FROM BEER WHERE BREWERY LIKE ? OR NAME LIKE ? OR STYLE LIKE ?")) {
 
             ps.setString(1, "%" + search + "%");
             ps.setString(2, "%" + search + "%");
