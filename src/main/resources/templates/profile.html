@@ -2,10 +2,32 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Search Result</title>
+    <link rel="stylesheet" type="text/css" href="/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="/style.css" />
 </head>
-<body>
-<p th:text="'Welcome SkumMaster ' + ${session.user.username}"></p>
-<p th:each="beer : ${session.sumbeers}" th:text="${beer.key.name} + ' ' + ${beer.value}"></p>
+<body id="PageBody">
+<div id="BodyContent">
+    <div id="ContentLeft">
+        <div id="Menu">
+            <div th:replace="index :: topleft"/>
+            <form action="/result/1" method="post">
+                <input type="text" style="width: 150px;" name="search" placeholder="Search...">
+                <input type="submit" value="GO!">
+            </form>
+        </div>
+        <div id="Latest">
+            <img src="/beermug_small.png" width="80%" />
+        </div>
+    </div>
+    <div id="ContentRight">
+        <p th:each="beer : ${session.sumbeers}" th:text="${beer.key.name} + ' ' + ${beer.value}"></p>
+    </div>
+</div>
+
+<div id="BodyFooter">
+    Copyright SkumMasters of the Universe 2019
+</div>
+
 </body>
 </html>

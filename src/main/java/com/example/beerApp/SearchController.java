@@ -18,11 +18,6 @@ import java.util.List;
 @Controller
 public class SearchController {
 
-//    @GetMapping("/")
-//    public String searchStart(){
-//
-//        return "search";
-//    }
 
     @PostMapping("/result/{page}")
     public String searchResult(@RequestParam String search, @PathVariable int page, Model model, HttpSession session) throws SQLException {
@@ -40,7 +35,7 @@ public class SearchController {
         model.addAttribute("numberOfPages", numberOfPages);
         model.addAttribute("currentPage", page);
 
-        return"searchResult";
+        return "searchResult";
     }
 
     @GetMapping("/result/{page}")
@@ -61,5 +56,6 @@ public class SearchController {
 
         return"searchResult";
     }
+
 
 }

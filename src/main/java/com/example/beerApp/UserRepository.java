@@ -45,7 +45,7 @@ public class UserRepository {
         BeerRepository beerRepository = new BeerRepository();
         List<Beer> beers = new ArrayList<>();
         try (Connection conn = dataSource.getConnection();
-             PreparedStatement ps = conn.prepareStatement("SELECT Beer.ID, Name, Brewery FROM Beer " +
+             PreparedStatement ps = conn.prepareStatement("SELECT * FROM Beer " +
                      "INNER JOIN UserHistory ON UserHistory.BeerID = Beer.ID " +
                      "INNER JOIN UserEtt ON UserEtt.ID = UserHistory.UserID " +
                      "WHERE UserEtt.Username LIKE ?")) {

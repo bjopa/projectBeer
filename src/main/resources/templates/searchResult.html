@@ -10,18 +10,17 @@
 <div id="BodyContent">
     <div id="ContentLeft">
         <div id="Menu">
-            <img src="/anon.png" width="30%" />
+            <div th:replace="index :: topleft"/>
+            <form action="/result/1" method="post">
+                <input type="text" style="width: 150px;" name="search" placeholder="Search...">
+                <input type="submit" value="GO!">
+            </form>
         </div>
         <div id="Latest">
             <img src="/beermug_small.png" width="80%" />
         </div>
     </div>
     <div id="ContentRight">
-
-        <form action="/result/1" method="POST">
-            <input type="text" name="search"/>
-            <input type="submit" value="SEARCH"/>
-        </form>
 
         <div th:if="${!beerList.empty}">
             <div id="beerInfo" th:each="Beer : ${beerList}">

@@ -30,16 +30,17 @@ public class UserController {
         User user = userRepository.checkUser(username, password);
         if (user != null) {
             session.setAttribute("user", user);
-            return "redirect:/profile";
+            return "redirect:/index";
         }
         return "login";
     }
 
     @GetMapping("/profile")
-    public String welcome(HttpSession session) {
+    public String profile(HttpSession session) {
         User user = (User) session.getAttribute("user");
         List<Beer> allBeers;
         allBeers = userRepository.getBeerByUser(user);
+        System.out.println(allBeers.size());
         Map<Beer, Integer> sumBeers = new HashMap<>();
         if (allBeers != null) {
             for (int i = 0; i < allBeers.size() - 1; i++) {
@@ -56,5 +57,10 @@ public class UserController {
             session.setAttribute("sumbeers", sumBeers);
         }
         return "profile";
+    }
+
+    @GetMapping("/index")
+    public String index() {
+        return "index";
     }
 }
