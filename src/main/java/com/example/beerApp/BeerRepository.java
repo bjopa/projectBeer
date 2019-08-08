@@ -43,7 +43,7 @@ public class BeerRepository {
         return beerList;
     }
 
-    private Beer rsBeer(ResultSet rs) throws SQLException {
+    Beer rsBeer(ResultSet rs) throws SQLException {
         return new Beer(rs.getInt("ID"),
                 rs.getString("Name"),
                 rs.getString("Brewery"),
