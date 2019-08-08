@@ -10,8 +10,8 @@ public class BeerAppApplication {
 
 	public static void main(String[] args) throws SQLException{
 
-//		BeerRepository beerRepository = new BeerRepository();
-//		beerRepository.getBeer("dugges");
+		BeerRepository beerRepository = new BeerRepository();
+		beerRepository.getBeer("dugges");
 
 		SpringApplication.run(BeerAppApplication.class, args);
 	}
