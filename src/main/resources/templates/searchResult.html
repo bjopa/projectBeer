@@ -42,13 +42,11 @@
 
                 </form>
 
-
-<!--                <form th:action="'/result/' + ${page} + '/' + ${Beer.id}" method="POST">-->
-<!--                    <button type="submit" value="Add to beerlist!" name="addToBeerList"/>Add to Beerlist!</button>-->
-<!--                </form>-->
+        <div th:if="${!beerList.empty}">
+            <div id="beerInfo" th:each="Beer : ${beerList}">
 
                 <img src="/beer_icon.png" width="20%"/>
-                <h2 th:text="${Beer.name} + ' ' + ${Beer.brewery}"></h2>
+                <h2 th:text="${Beer.name}" class="beerListRow1"></h2>
                 <p th:text="${Beer.brewery}" class="beerListRow1"></p>
                 <p th:text="${Beer.style}" class="beerListRow2"></p>
                 <p th:text="'(' + ${Beer.alcohol} + ' %)' " class="beerListRow2"></p>

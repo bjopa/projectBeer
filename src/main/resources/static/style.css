@@ -22,6 +22,7 @@ body {
   overflow: hidden;
 }
 
+
 #BodyFooter {
   position: fixed;
   bottom: 0;
@@ -89,6 +90,7 @@ body {
 .feedgrabbr_widget {
   padding: 50px;
 }
+/*
 
 .rating > .half:before {
   content: "\f089";
@@ -130,3 +132,53 @@ margin: 0; padding: 0;
   display: inline-block;
   content: "\f005";
 }
+*/
+
+
+/*START. Code by Irvin, search result*/
+.beerinfo {
+padding-left: 20px;
+font-color: #dce6ef;
+}
+
+.beerpic {
+margin-top: 30px;
+margin-bottom: 20px;
+float: left;
+}
+
+.beername{
+    font-weight: bold;
+    margin: auto;
+    padding-left: 0;
+    padding-top: 10px;
+    padding-right: 10px;
+    float: left;
+
+}
+
+.brewery {
+     padding: 0;
+     padding-top: 10px;
+     margin-top: 0px;
+}
+
+.beerstyle {
+       padding-right: 10px;
+       margin: auto;
+       float: left;
+}
+
+.alcohol {
+    color: black;
+    font-size: small;
+    padding: 0;
+    margin: 0;
+}
+
+.description {
+        padding-bottom: 10px;
+}
+
+
+/*END. Code by Irvin, search result*/
