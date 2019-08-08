@@ -13,4 +13,9 @@ public class BeerAppApplicationTests {
 	public void contextLoads() {
 	}
 
+	@Test
+	public void testConnection() {
+
+	}
+
 }
