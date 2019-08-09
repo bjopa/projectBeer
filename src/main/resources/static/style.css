@@ -229,3 +229,9 @@ float: left;
 
 
 /*END. Code by Irvin, search result*/
+
+.error {
+  background: #588fb3;
+  text-align: center;
+  padding-top: 50px;
+}
