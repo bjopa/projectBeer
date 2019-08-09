@@ -5,9 +5,6 @@ public class User {
     private Integer id;
     private String username;
     private String password;
-//    String firstname;
-//    String lastname;
-
 
     public User(int id, String userName, String password) {
         this.id = id;

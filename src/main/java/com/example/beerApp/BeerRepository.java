@@ -1,7 +1,6 @@
 package com.example.beerApp;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.stereotype.Service;
 
 import javax.sql.DataSource;
