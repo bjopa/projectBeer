@@ -35,7 +35,7 @@ body {
 
 #ContentLeft {
   display: inline-block;
-  height: 37em;
+  height: 45em;
   background: #588fb3;
   text-align:center;
 }
@@ -50,7 +50,7 @@ body {
 }
 
 #ContentRightProfile {
-    height: 37em;
+    height: 45em;
 }
 
 
@@ -106,7 +106,6 @@ padding-top: 25px;
 .feedgrabbr_widget {
   padding: 50px;
 }
-
 
 .button {
 margin-top: 25px;

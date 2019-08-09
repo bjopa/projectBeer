@@ -47,7 +47,7 @@ public class UserRepository {
     public void setBeerByUser(int beerId, int userId, int beerRating) {
 
         try (Connection conn = dataSource.getConnection();
-             PreparedStatement ps = conn.prepareStatement("INSERT UserHistory(BeerID, UserID, Rating)\n" +
+             PreparedStatement ps = conn.prepareStatement("INSERT INTO UserHistory(BeerID, UserID, Rating)\n" +
                      "VALUES (?, ?, ?)")) {
             ps.setInt(1, beerId);
             ps.setInt(2, userId);
@@ -81,5 +81,18 @@ public class UserRepository {
         }
         return beers;
     }
+
+    public void addUser(String username, String password) {
+        try (Connection conn = dataSource.getConnection();
+             PreparedStatement ps = conn.prepareStatement("INSERT INTO UserEtt(Username, Password) VALUES(?,?)")) {
+            ps.setString(1,username);
+            ps.setString(2,password);
+            ps.execute();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
 
 }

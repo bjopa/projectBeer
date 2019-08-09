@@ -41,6 +41,22 @@ public class UserController {
         return "redirect:/login";
     }
 
+    @GetMapping("/adduser")
+    public String adduserGet() {
+        return "adduser";
+    }
+
+    @PostMapping("/adduser")
+    public String adduserPost() {
+        return "adduser";
+    }
+
+    @PostMapping("/register")
+    public String register(@RequestParam String username, @RequestParam String password) {
+        userRepository.addUser(username, password);
+        return "redirect:login";
+    }
+
     @GetMapping("/profile")
     public String profile(HttpSession session) {
         User user = (User) session.getAttribute("user");

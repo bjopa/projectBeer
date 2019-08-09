@@ -9,10 +9,18 @@
   </head>
   <body id="LoginBody">
     <img src="/beermug.png" width="25%" />
-    <form action="login" method="post">
-      <input type="text" name="username" placeholder="Username" />
-      <input type="password" name="password" placeholder="Password" />
-      <input type="submit" value="Login" />
-    </form>
+    <div style="display: flex; justify-content: center;">
+
+      <form action="login" method="post">
+        <input type="text" name="username" placeholder="Username" />
+        <input type="password" name="password" placeholder="Password" />
+        <input type="submit" value="Login" />
+      </form>
+
+      <form style="margin-left: 3px;" action="adduser" method="post">
+        <input type="submit" value="New User" />
+       </form>
+
+    </div>
   </body>
 </html>
