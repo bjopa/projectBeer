@@ -147,7 +147,7 @@ cursor: pointer;
 
 #navBar {
 padding-bottom: 10%;
-margin-left: 25%;
+margin: auto;
 }
 
 
@@ -200,7 +200,7 @@ margin: 0; padding: 0;
 /*START. Code by Irvin, search result*/
 
 .beerInfo {
-    padding-left: 5%;
+    margin: auto;
     max-width: 50%;
     font-color: #dce6ef;
 }
@@ -211,6 +211,7 @@ margin-bottom: 20px;
 float: left;
 }
 
+/*
 .beername{
     font-weight: bold;
     margin: auto;
@@ -239,12 +240,58 @@ float: left;
     padding: 0;
     margin: 0;
 }
+*/
 
 .description {
         color: #dce6ef;
         padding-bottom: 10px;
         text-align: left;
 }
+
+.beertable {
+  border-collapse: collapse;
+  border: 1px solid black;
+  width: 100%
+}
+
+.thImages {
+width: 15%;
+}
+
+.thBeerinfo{
+width: 35%;
+}
+
+.thRating{
+width: 20%;
+}
+
+.name_brewery {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 3px;
+}
+
+.spanBrewery {
+font-size: 15px;
+color: white;
+font-weight: normal;
+}
+
+.style_alcohol{
+margin-top: 0px;
+font-weight: normal;
+text-align: left;
+}
+
+.description{
+font-weight: normal;
+text-align: left;
+}
+
+
 
 
 /*END. Code by Irvin, search result*/

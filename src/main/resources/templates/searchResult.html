@@ -28,30 +28,50 @@
     <div class="ContentRight">
 
         <div th:if="${!beerList.empty}">
-            <div class="beerInfo" th:each="Beer : ${beerList}">
 
+            <table class="beerTable">
 
-                <form th:action="@{'/result/' + ${page} + '/' + ${Beer.id}}" method="post" class="rating">
+                <div class="beerInfo" th:each="Beer : ${beerList}">
+                <tr>
+                    <th class="thImages">
+                        <img src="https://static.systembolaget.se/imagelibrary/publishedmedia/ira2m462ibsn8vki6nxn/4368919.jpg" alt="Picture of a beer" height="20%" width="65%">
+                    </th>
 
-                        <input type="submit" th:id="'star5id' + ${Beer.id}" name="beerRating" th:value="5" /><label class = "full" th:for="'star5id' + ${Beer.id}" title="Awesome - 5 stars"></label>
+                    <th class="thBeerinfo">
 
-                        <input type="submit" th:id="'star4id' + ${Beer.id}" name="beerRating" th:value="4" /><label class = "full" th:for="'star4id' + ${Beer.id}" title="Pretty good - 4 stars"></label>
+                        <p class="name_brewery">[[${Beer.name}]] <span class="spanBrewery">   [[${Beer.brewery}]]</span></p>
+                        <p class="style_alcohol">[[${Beer.style}]] <span class="spanAlcohol"> ([[${Beer.alcohol}]]%)</span></p>
+                        <p class="description" th:text="${Beer.description}"></p>
 
-                        <input type="submit" th:id="'star3id' + ${Beer.id}" name="beerRating" th:value="3" /><label class = "full" th:for="'star3id' + ${Beer.id}" title="Meh - 3 stars"></label>
+<!--                        <p th:text="${Beer.name}" class="beername"></p>-->
+<!--                        <p th:text="${Beer.brewery}" class="brewery"></p>-->
+<!--                        <p th:text="${Beer.style}" class="beerstyle"></p>-->
+<!--                        <p th:text="' ' + '(' + ${Beer.alcohol} + ' %)' " class="alcohol"></p>-->
+<!--                        <p th:text="${Beer.description}" class="description"></p>-->
+                    </th>
 
-                        <input type="submit" th:id="'star2id' + ${Beer.id}" name="beerRating" th:value="2" /><label class = "full" th:for="'star2id' + ${Beer.id}" title="Kinda bad - 2 stars"></label>
+                    <th class="thRating">
+                        <form th:action="@{'/result/' + ${page} + '/' + ${Beer.id}}" method="post" class="rating">
 
-                        <input type="submit" th:id="'star1id' + ${Beer.id}" name="beerRating" th:value="1" /><label class = "full" th:for="'star1id' + ${Beer.id}" title="Sucks big time - 1 star"></label>
+                            <input type="submit" th:id="'star5id' + ${Beer.id}" name="beerRating" th:value="5" /><label class = "full" th:for="'star5id' + ${Beer.id}" title="Awesome - 5 stars"></label>
 
-                </form>
+                            <input type="submit" th:id="'star4id' + ${Beer.id}" name="beerRating" th:value="4" /><label class = "full" th:for="'star4id' + ${Beer.id}" title="Pretty good - 4 stars"></label>
 
-                <p th:text="${Beer.name}" class="beername"></p>
-                <p th:text="${Beer.brewery}" class="brewery"></p>
-                <p th:text="${Beer.style}" class="beerstyle"></p>
-                <p th:text="' ' + '(' + ${Beer.alcohol} + ' %)' " class="alcohol"></p>
-                <p th:text="${Beer.description}" class="description"></p>
+                            <input type="submit" th:id="'star3id' + ${Beer.id}" name="beerRating" th:value="3" /><label class = "full" th:for="'star3id' + ${Beer.id}" title="Meh - 3 stars"></label>
 
-            </div>
+                            <input type="submit" th:id="'star2id' + ${Beer.id}" name="beerRating" th:value="2" /><label class = "full" th:for="'star2id' + ${Beer.id}" title="Kinda bad - 2 stars"></label>
+
+                            <input type="submit" th:id="'star1id' + ${Beer.id}" name="beerRating" th:value="1" /><label class = "full" th:for="'star1id' + ${Beer.id}" title="Sucks big time - 1 star"></label>
+
+                        </form>
+
+                    </th>
+
+                    </div>
+
+                </tr>
+            </table>
+
 
                 <div id="navBar">
 
