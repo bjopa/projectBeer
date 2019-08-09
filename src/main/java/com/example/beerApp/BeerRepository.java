@@ -11,6 +11,7 @@ import java.util.List;
 
 @Service
 public class BeerRepository {
+
     private List<Beer> beerList;
 
     @Autowired
@@ -64,5 +65,5 @@ public class BeerRepository {
     public int numberOfPages() {
         return (int)Math.ceil(new Double(beerList.size()) / 4);
     }
-
+     
 }

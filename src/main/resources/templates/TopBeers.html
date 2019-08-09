@@ -22,23 +22,9 @@
         </a>
     </div>
     <div class="ContentRight" id="ContentRightProfile">
-        <div id="profileStats">
-            <img src="/anon.png" width="90px" height="90px">
-            <table>
-                <tr>
-                    <th>Total</th>
-                    <th>Unique</th>
-                </tr>
-                <tr>
-                    <td><span class="numberSquare" th:text="${session.totalNum}"></span></td>
-                    <td><span class="numberSquare" th:text="${session.uniqueNum}"></span></td>
-                </tr>
-            </table>
 
-
-        </div>
         <div id="userHistory">
-            <h2>Remember your last ten Beers?</h2>
+            <h2>Our users top 5 beers!</h2>
             <p th:each="beer : ${session.lastTen}" th:text="${beer.name}"></p>
         </div>
     </div>

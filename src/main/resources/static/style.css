@@ -61,10 +61,15 @@ body {
 }
 
 #Latest {
-padding-top: 25px;
+  padding-top: 25px;
   height: calc(100% - 350px);
   width: 270px;
   text-align: center;
+  text-decoration: none;
+}
+
+.backToIndex {
+    text-decoration: none;
 }
 
 #Latest > img {
@@ -77,6 +82,14 @@ padding-top: 25px;
   border-style: solid;
   border-width: 2px;
 }
+
+figcaption {
+    margin-right: 10%;
+    font-size: x-large;
+    font-weight: 700;
+    color: #ffbd30;
+}
+
 
 #MenuSpan {
     font-size: 1.5em;
