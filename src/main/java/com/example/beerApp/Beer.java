@@ -9,6 +9,7 @@ public class Beer {
     private String description;
 
 
+
     public Beer(Integer id, String name, String brewery, String style, double alcohol, String description) {
         this.id = id;
         this.name = name;

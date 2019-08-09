@@ -119,7 +119,7 @@ cursor: pointer;
 
 #navBar {
 padding-bottom: 10%;
-margin-left: 25%;
+margin: auto;
 }
 
 
@@ -172,7 +172,7 @@ margin: 0; padding: 0;
 /*START. Code by Irvin, search result*/
 
 .beerInfo {
-    padding-left: 5%;
+    margin: auto;
     max-width: 50%;
     font-color: #dce6ef;
 }
@@ -216,6 +216,24 @@ float: left;
         color: #dce6ef;
         padding-bottom: 10px;
         text-align: left;
+}
+
+.beertable {
+  border-collapse: collapse;
+  border: 1px solid black;
+  width: 100%
+}
+
+.thImages {
+width: 15%;
+}
+
+.thBeerinfo{
+width: 35%;
+}
+
+.thRating{
+width: 20%;
 }
 
 
