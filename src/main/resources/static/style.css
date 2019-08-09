@@ -16,11 +16,11 @@ body {
 }
 
 #BodyContent {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  overflow: hidden;
-}
+   display: flex;
+   flex-direction: row;
+   width: 100%;
+   overflow: hidden;
+ }
 
 
 #BodyFooter {
@@ -90,7 +90,56 @@ body {
 .feedgrabbr_widget {
   padding: 50px;
 }
-/*
+
+
+.button {
+margin-top: 25px;
+background: #16adcc;
+border: none;
+color: white;
+padding: 15px 32px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 16px;
+cursor: pointer;
+}
+
+.numberSquare {
+ width: 36px;
+ height: 36px;
+ padding: 8px;
+ background: #fff;
+ border: 2px solid #666;
+ color: #666;
+ text-align: center;
+ display: inline-block;
+ font: 32px Arial, sans-serif;
+}
+
+/****** Style Star Rating Widget *****/
+
+.rating, label {
+margin: 0; padding: 0;
+}
+
+.rating {
+  border: none;
+  float: left;
+}
+
+.rating > input {
+    display: none;
+}
+
+
+.rating > label:before {
+  margin: 5px;
+  font-size: 1.25em;
+  font-family: FontAwesome;
+  display: inline-block;
+  content: "\f005";
+}
 
 .rating > .half:before {
   content: "\f089";
@@ -113,32 +162,13 @@ body {
 .rating > label:hover ~ input:checked ~ label, /* lighten current selection */
 .rating > input:checked ~ label:hover ~ label { color: #FFED85;  }
 
-.rating, label {
-margin: 0; padding: 0;
-}
-
-/****** Style Star Rating Widget *****/
-
-.rating {
-  border: none;
-  float: left;
-}
-
-.rating > input { display: none; }
-.rating > label:before {
-  margin: 5px;
-  font-size: 1.25em;
-  font-family: FontAwesome;
-  display: inline-block;
-  content: "\f005";
-}
-*/
-
 
 /*START. Code by Irvin, search result*/
-.beerinfo {
-padding-left: 20px;
-font-color: #dce6ef;
+
+.beerInfo {
+    padding-left: 5%;
+    max-width: 50%;
+    font-color: #dce6ef;
 }
 
 .beerpic {
@@ -170,14 +200,16 @@ float: left;
 }
 
 .alcohol {
-    color: black;
+    color: #dce6ef;
     font-size: small;
     padding: 0;
     margin: 0;
 }
 
 .description {
+        color: #dce6ef;
         padding-bottom: 10px;
+        text-align: left;
 }
 
 

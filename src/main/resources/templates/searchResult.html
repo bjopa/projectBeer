@@ -42,19 +42,15 @@
 
                 </form>
 
-        <div th:if="${!beerList.empty}">
-            <div id="beerInfo" th:each="Beer : ${beerList}">
-
-                <img src="/beer_icon.png" width="20%"/>
-                <h2 th:text="${Beer.name}" class="beerListRow1"></h2>
-                <p th:text="${Beer.brewery}" class="beerListRow1"></p>
-                <p th:text="${Beer.style}" class="beerListRow2"></p>
-                <p th:text="'(' + ${Beer.alcohol} + ' %)' " class="beerListRow2"></p>
-                <p th:text="${Beer.description}" class="beerListRow3"></p>
+                <p th:text="${Beer.name}" class="beername"></p>
+                <p th:text="${Beer.brewery}" class="brewery"></p>
+                <p th:text="${Beer.style}" class="beerstyle"></p>
+                <p th:text="' ' + '(' + ${Beer.alcohol} + ' %)' " class="alcohol"></p>
+                <p th:text="${Beer.description}" class="description"></p>
 
             </div>
 
-            <div id="navBar">
+                <div id="navBar">
 
                 <a th:if="${currentPage != 1}" th:href="'/result/' +${currentPage-1}">Previous page</a>
 
