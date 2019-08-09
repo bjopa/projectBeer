@@ -34,7 +34,7 @@
                 <div class="beerInfo" th:each="Beer : ${beerList}">
                 <tr>
                     <th class="thImages">
-                        <img src="https://static.systembolaget.se/imagelibrary/publishedmedia/ira2m462ibsn8vki6nxn/4368919.jpg" alt="Picture of a beer" height="20%" width="65%">
+                        <img th:src="${Beer.imgUrl}" alt="Picture of a beer" height="30%" width="30%">
                     </th>
 
                     <th class="thBeerinfo">

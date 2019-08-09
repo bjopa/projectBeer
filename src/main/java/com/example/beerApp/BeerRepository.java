@@ -34,10 +34,6 @@ public class BeerRepository {
                 beerList.add(rsBeer(rs));
             }
 
-            for (int i = 0; i < beerList.size(); i++) {
-                System.out.println(beerList.get(i).getBrewery());
-            }
-
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -51,7 +47,8 @@ public class BeerRepository {
                 rs.getString("Brewery"),
                 rs.getString("Style"),
                 rs.getDouble("Alcohol"),
-                rs.getString("Description"));
+                rs.getString("Description"),
+                rs.getString("Picture"));
 
     }
 

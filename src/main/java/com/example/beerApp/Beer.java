@@ -7,16 +7,18 @@ public class Beer {
     private String style;
     private double alcohol;
     private String description;
+    private String imgUrl;
 
 
 
-    public Beer(Integer id, String name, String brewery, String style, double alcohol, String description) {
+    public Beer(Integer id, String name, String brewery, String style, double alcohol, String description, String imgUrl) {
         this.id = id;
         this.name = name;
         this.brewery = brewery;
         this.style = style;
         this.alcohol = alcohol;
         this.description = description;
+        this.imgUrl=imgUrl;
     }
 
     public Integer getId() {
@@ -65,6 +67,14 @@ public class Beer {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getImgUrl() {
+        return imgUrl;
+    }
+
+    public void setImgUrl(String imgUrl) {
+        this.imgUrl = imgUrl;
     }
 }
 
