@@ -65,6 +65,9 @@ public class SearchController {
     @PostMapping ("/result/{page}/{beerId}")
     String rateBeer (@PathVariable int page, @PathVariable int beerId, HttpSession session, Model model, HttpServletRequest request) throws SQLException {
 
+        User user = (User) session.getAttribute("user");
+        int userId = user.getId();
+
         String search = (String)session.getAttribute("search");
 
         List<Beer> beerList = beerRepository.getBeer(search);
@@ -78,7 +81,7 @@ public class SearchController {
 
         int beerRating = Integer.parseInt(request.getParameter("beerRating"));
 
-        userRepository.setBeerByUser(beerId, 2, beerRating);
+        userRepository.setBeerByUser(beerId, userId, beerRating);
 
         return"searchResult";
     }
