@@ -35,19 +35,23 @@ body {
 
 #ContentLeft {
   display: inline-block;
-  height: 45em;
+  height: 37em;
   background: #588fb3;
   text-align:center;
 }
 
-#ContentRight {
+.ContentRight {
   background: #588fb3;
   padding-left: 0px;
   width: 100%;
-  height: 45em;
   margin-left: 10px;
   text-align: center;
 }
+
+#ContentRightProfile {
+    height: 37em;
+}
+
 
 #Menu {
   position: relative;
@@ -56,13 +60,14 @@ body {
 }
 
 #Latest {
+padding-top: 25px;
   height: calc(100% - 350px);
   width: 270px;
   text-align: center;
 }
 
 #Latest > img {
-  padding-top: 80px;
+ width: 50%;
 }
 
 #MenuImg {
@@ -73,9 +78,6 @@ body {
 }
 
 #MenuSpan {
-    /*position: relative;
-    top: -25px;
-    padding-left: 25px;*/
     font-size: 1.5em;
     font-style: italic;
     font-weight: bold;
@@ -85,6 +87,19 @@ body {
 
 #SmallSearch {
     margin-top: 25px;
+}
+
+#profileStats {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+#profileStats > td {
+    width: 50px;
+}
+
+#userHistory {
 }
 
 .feedgrabbr_widget {

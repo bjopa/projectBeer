@@ -46,24 +46,31 @@ public class UserController {
         User user = (User) session.getAttribute("user");
         List<Beer> allBeers;
         allBeers = userRepository.getBeerByUser(user);
-        System.out.println(allBeers.size());
-        Map<Beer, Integer> sumBeers = new LinkedHashMap<>();
+        Map<Integer, Integer> sumBeers = new LinkedHashMap<>();
         if (allBeers != null) {
-            for (int i = 0; i < allBeers.size() - 1; i++) {
+
+            for (int i = 0; i < allBeers.size(); i++) {
                 int count = 1;
                 for (int j = i + 1; j < allBeers.size(); j++) {
                     if (allBeers.get(i).getId() == allBeers.get(j).getId()) {
                         count++;
                     }
-                }
-                if (!sumBeers.containsKey(allBeers.get(i))) {
-                    sumBeers.put(allBeers.get(i), count);
+                    if (!sumBeers.containsKey(allBeers.get(j).getId())) {
+                        sumBeers.put(allBeers.get(j).getId(), count);
+                    }
                 }
             }
+
+            Beer[] lastTen = new Beer[allBeers.size()>=10 ? 10 : allBeers.size()];
+            for (int i = 0 ; i < lastTen.length ; i++) {
+                lastTen[i]=allBeers.get(allBeers.size()-(i+1));
+            }
+            session.setAttribute("lastTen", lastTen);
             session.setAttribute("sumbeers", sumBeers);
             session.setAttribute("uniqueNum", sumBeers.size());
             session.setAttribute("totalNum", allBeers.size());
         }
+
         return "profile";
     }
 
