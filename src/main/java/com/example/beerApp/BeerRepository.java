@@ -62,7 +62,7 @@ public class BeerRepository {
     }
 
     public int numberOfPages() {
-        return (int)Math.ceil(new Double(beerList.size()) / 5);
+        return (int)Math.ceil(new Double(beerList.size()) / 4);
     }
 
 }
