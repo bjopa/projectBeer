@@ -11,10 +11,6 @@ public class BeerAppApplication {
 
 	public static void main(String[] args) throws SQLException{
 
-
-		BeerRepository beerRepository = new BeerRepository();
-		beerRepository.getTopBeers();
-
 		SpringApplication.run(BeerAppApplication.class, args);
 	}
 
