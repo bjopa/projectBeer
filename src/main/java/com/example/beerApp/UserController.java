@@ -63,17 +63,20 @@ public class UserController {
         List<Beer> allBeers;
         allBeers = userRepository.getBeerByUser(user);
         Map<Integer, Integer> sumBeers = new LinkedHashMap<>();
+
         if (allBeers != null) {
 
             for (int i = 0; i < allBeers.size(); i++) {
                 int count = 1;
+
                 for (int j = i + 1; j < allBeers.size(); j++) {
+
                     if (allBeers.get(i).getId() == allBeers.get(j).getId()) {
                         count++;
                     }
-                    if (!sumBeers.containsKey(allBeers.get(j).getId())) {
-                        sumBeers.put(allBeers.get(j).getId(), count);
-                    }
+                }
+                if (!sumBeers.containsKey(allBeers.get(i).getId())) {
+                    sumBeers.put(allBeers.get(i).getId(), count);
                 }
             }
 
