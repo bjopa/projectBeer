@@ -183,6 +183,7 @@ margin-bottom: 20px;
 float: left;
 }
 
+/*
 .beername{
     font-weight: bold;
     margin: auto;
@@ -211,6 +212,7 @@ float: left;
     padding: 0;
     margin: 0;
 }
+*/
 
 .description {
         color: #dce6ef;
@@ -235,6 +237,33 @@ width: 35%;
 .thRating{
 width: 20%;
 }
+
+.name_brewery {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 3px;
+}
+
+.spanBrewery {
+font-size: 15px;
+color: white;
+font-weight: normal;
+}
+
+.style_alcohol{
+margin-top: 0px;
+font-weight: normal;
+text-align: left;
+}
+
+.description{
+font-weight: normal;
+text-align: left;
+}
+
+
 
 
 /*END. Code by Irvin, search result*/

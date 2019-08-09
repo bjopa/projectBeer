@@ -31,16 +31,20 @@
                 <div class="beerInfo" th:each="Beer : ${beerList}">
                 <tr>
                     <th class="thImages">
-                        Images!
+                        <img src="https://static.systembolaget.se/imagelibrary/publishedmedia/ira2m462ibsn8vki6nxn/4368919.jpg" alt="Picture of a beer" height="20%" width="65%">
                     </th>
 
                     <th class="thBeerinfo">
 
-                        <p th:text="${Beer.name}" class="beername"></p>
-                        <p th:text="${Beer.brewery}" class="brewery"></p>
-                        <p th:text="${Beer.style}" class="beerstyle"></p>
-                        <p th:text="' ' + '(' + ${Beer.alcohol} + ' %)' " class="alcohol"></p>
-                        <p th:text="${Beer.description}" class="description"></p>
+                        <p class="name_brewery">[[${Beer.name}]] <span class="spanBrewery">   [[${Beer.brewery}]]</span></p>
+                        <p class="style_alcohol">[[${Beer.style}]] <span class="spanAlcohol"> ([[${Beer.alcohol}]]%)</span></p>
+                        <p class="description" th:text="${Beer.description}"></p>
+
+<!--                        <p th:text="${Beer.name}" class="beername"></p>-->
+<!--                        <p th:text="${Beer.brewery}" class="brewery"></p>-->
+<!--                        <p th:text="${Beer.style}" class="beerstyle"></p>-->
+<!--                        <p th:text="' ' + '(' + ${Beer.alcohol} + ' %)' " class="alcohol"></p>-->
+<!--                        <p th:text="${Beer.description}" class="description"></p>-->
                     </th>
 
                     <th class="thRating">
