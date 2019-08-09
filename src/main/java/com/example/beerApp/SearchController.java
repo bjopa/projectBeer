@@ -32,7 +32,7 @@ public class SearchController {
         session.setAttribute("search", search);
 
         List<Beer> beerList = beerRepository.getBeer(search);
-        beerList = beerRepository.getPage(page-1, 5, beerList);
+        beerList = beerRepository.getPage(page-1, 4, beerList);
 
         int numberOfPages = beerRepository.numberOfPages();
 
@@ -48,12 +48,10 @@ public class SearchController {
 
         String search = (String)session.getAttribute("search");
 
-        BeerRepository repository = new BeerRepository();
+        List<Beer> beerList = beerRepository.getBeer(search);
+        beerList = beerRepository.getPage(page-1, 4, beerList);
 
-        List<Beer> beerList = repository.getBeer(search);
-        beerList = repository.getPage(page-1, 5, beerList);
-
-        int numberOfPages = repository.numberOfPages();
+        int numberOfPages = beerRepository.numberOfPages();
 
         model.addAttribute("beerList", beerList);
         model.addAttribute("numberOfPages", numberOfPages);
@@ -71,7 +69,7 @@ public class SearchController {
         String search = (String)session.getAttribute("search");
 
         List<Beer> beerList = beerRepository.getBeer(search);
-        beerList = beerRepository.getPage(page-1, 5, beerList);
+        beerList = beerRepository.getPage(page-1, 4, beerList);
 
         int numberOfPages = beerRepository.numberOfPages();
 
